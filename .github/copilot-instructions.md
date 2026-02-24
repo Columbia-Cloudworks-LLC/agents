@@ -18,9 +18,7 @@ This repository is a library of **agent skills**, **subagents**, **prompt templa
 | `subagents/<name>/AGENT.md` | Subagent role descriptions and delegation patterns |
 | `prompts/` | Reusable prompt library (system, tasks, patterns) |
 | `.github/prompts/` | Chat-referenceable prompts (`#prompt:<name>`) |
-| `.cursor/` | Cursor hook configuration and scripts |
-| `examples/` | End-to-end usage scenarios |
-| `docs/` | Architecture and deep-dive documentation |
+| `.cursor/` | Cursor hook scripts and `hooks.json` configuration |
 
 ---
 
@@ -41,8 +39,6 @@ This repository is a library of **agent skills**, **subagents**, **prompt templa
 - **Explain your reasoning.** When generating or modifying a skill/subagent/prompt, briefly explain what you changed and why.
 - **Respect existing structure.** Follow the folder naming conventions and frontmatter schema already established.
 - **Reference context selectors where helpful:** use `#file`, `#selection`, `#codebase`, or `#git` in prompts to encourage users to provide precise context.
-- **When generating tests,** follow the conventions in `skills/tests-generator/SKILL.md`.
-- **When writing documentation,** follow the conventions in `skills/docs-writer/SKILL.md`.
 
 ---
 
@@ -62,7 +58,30 @@ The subagent performs the heavy analysis and returns a structured summary; the m
 
 | Prompt | Use case |
 |--------|---------|
-| `#prompt:code-review-task` | Structured code review |
-| `#prompt:refactor-task` | Refactoring with explanation |
-| `#prompt:test-generation-task` | Generating tests for a file or selection |
-| `#prompt:skills-index` | Overview of all available skills |
+| `#prompt:reflect` | Reflect on the conversation and identify skill improvements needed |
+
+---
+
+## Available skills
+
+| Skill | Folder | Description |
+|-------|--------|-------------|
+| `cost-optimization` | `skills/cost-optimization/` | Cloud cost reduction: rightsizing, tagging, reserved instances, spending analysis |
+| `docker-expert` | `skills/docker-expert/` | Multi-stage builds, image optimization, container security, Compose orchestration |
+| `microsoft-code-reference` | `skills/microsoft-code-reference/` | Azure SDK / .NET API lookup and working code samples via Learn MCP |
+| `microsoft-docs` | `skills/microsoft-docs/` | Official Microsoft documentation queries via Learn MCP |
+| `microsoft-hyper-v` | `skills/microsoft-hyper-v/` | Hyper-V host and VM lifecycle automation with PowerShell |
+| `microsoft-skill-creator` | `skills/microsoft-skill-creator/` | Generate new skills for Microsoft technologies using Learn MCP |
+| `modern-javascript-patterns` | `skills/modern-javascript-patterns/` | ES6+ features, async/await, functional patterns, clean JS |
+| `multi-cloud-architecture` | `skills/multi-cloud-architecture/` | Multi-cloud design patterns across AWS, Azure, and GCP |
+| `nodejs-best-practices` | `skills/nodejs-best-practices/` | Node.js architecture, framework selection, async, security, port/process management |
+| `powershell-5.1-expert` | `skills/powershell-5.1-expert/` | Legacy Windows PowerShell 5.1: WMI, ADSI, COM automation |
+| `powershell-7-expert` | `skills/powershell-7-expert/` | Modern PowerShell Core: cross-platform, parallel processing, REST APIs |
+| `powershell-master` | `skills/powershell-master/` | Full PowerShell expertise across all platforms and CI/CD pipelines |
+| `powershell-ui-architect` | `skills/powershell-ui-architect/` | PowerShell GUIs and TUIs using WinForms, WPF, and console frameworks |
+| `powershell-windows` | `skills/powershell-windows/` | Critical Windows PowerShell pitfalls, operator syntax, error handling |
+| `reddit-api` | `skills/reddit-api/` | Reddit API integration via PRAW (Python) and Snoowrap (Node.js) |
+| `semantic-html` | `skills/semantic-html/` | Semantic HTML, accessibility, and proper document structure |
+| `terraform-module-library` | `skills/terraform-module-library/` | Reusable Terraform modules for AWS, Azure, and GCP |
+| `web-design-reviewer` | `skills/web-design-reviewer/` | Visual inspection and source-level fixes for websites and SPAs |
+| `windows-batch` | `skills/windows-batch/` | Windows batch (.bat/.cmd) scripting best practices |

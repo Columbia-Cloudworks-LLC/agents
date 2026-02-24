@@ -1,0 +1,48 @@
+name: Bug Report
+description: Report a bug or unexpected behavior in one of the PowerShell scripts or modules.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: project
+    attributes:
+      label: Agent Type
+      description: Is this a subagent, skill, or prompt issue? If unsure, select "Other" and provide details in the description.
+      options:
+        - Subagent
+        - Skill
+        - Prompt
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is.
+      placeholder: Describe what is happening and why it is incorrect.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Minimal steps needed to reproduce the behavior.
+      placeholder: |
+        1. Provide a repository to the agent containing several PowerShell scripts.
+        2. Ask the agent to analyze the repository and provide a summary of the scripts.
+        3. Observe that the agent tries to use a non-existent command "Get-ScriptSummary" instead of correctly analyzing the scripts, resulting in an error.
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Your environment details, such as IDE, model version, and any other relevant information that could help in diagnosing the issue.
+      placeholder: |
+        - IDE: Visual Studio Code 1.80.0
+        - Model: Claude Opus 4.6 Max
+        - Any other relevant info

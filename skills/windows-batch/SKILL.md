@@ -1,9 +1,6 @@
 ---
 name: windows-batch
 description: Expert skill for writing, explaining, and refactoring Windows batch (.bat/.cmd) scripts using modern NT-style cmd best practices.
-version: 1.0.0
-author: Columbia Cloudworks
-tags: [windows, batch, cmd, bat, scripting, automation, legacy]
 ---
 
 ## Overview
