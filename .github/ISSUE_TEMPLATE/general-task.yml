@@ -1,0 +1,47 @@
+name: General Task / Chore
+description: Maintenance, refactoring, documentation, dependency updates, and other housekeeping tasks.
+title: "[Task] "
+labels: ["chore"]
+body:
+  - type: dropdown
+    id: category
+    attributes:
+      label: Task Category
+      description: What kind of task is this?
+      options:
+        - Refactor / Code Cleanup
+        - Documentation
+        - Dependency Update (module version bump)
+        - CI/CD / GitHub Config
+        - Maintenance / Housekeeping
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Task Description
+      description: A clear description of what needs to be done and why.
+      placeholder: |
+        Describe the work to be done, the current state, and why the change is needed.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: How will we know when this task is complete?
+      placeholder: |
+        - [ ] Criterion 1
+        - [ ] Criterion 2
+        - [ ] All existing functionality still works after the change
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Related issues, external references, or any other relevant context.
