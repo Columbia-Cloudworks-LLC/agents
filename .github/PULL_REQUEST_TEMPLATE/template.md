@@ -10,29 +10,28 @@ Closes #
 
 <!-- Check all that apply. -->
 
-- [ ] Bug fix (non-breaking change that resolves an issue)
-- [ ] New feature (non-breaking change that adds functionality)
-- [ ] Refactor / code cleanup (no functional change)
-- [ ] Documentation update
-- [ ] Skill / agent infrastructure
+- [ ] New skill (`skills/<name>/SKILL.md`)
+- [ ] New subagent (`subagents/<name>/AGENT.md`)
+- [ ] New or updated prompt (`prompts/` or `.github/prompts/`)
+- [ ] Update to existing skill / subagent content
+- [ ] Cursor hook (`.cursor/`)
+- [ ] Repository configuration / CI (`.github/`)
+- [ ] Documentation (`README.md`, `docs/`, `CONTRIBUTING.md`)
 
 ---
 
-## Affected Project(s)
+## Affected Area(s)
 
-- [ ] `enterprise-admin-lab`
-- [ ] `patch-management-tools`
-- [ ] `subreddit-scraper`
-- [ ] Skills / agent config (`.agents/`, `skills-lock.json`)
-- [ ] Global (Modules, root configs, `.github/`)
+<!-- Check all areas touched by this PR. -->
 
----
-
-## PowerShell Version(s) Tested
-
-- [ ] Windows PowerShell 5.1
-- [ ] PowerShell 7.x
-- [ ] Not applicable
+- [ ] `skills/`
+- [ ] `subagents/`
+- [ ] `prompts/`
+- [ ] `.github/prompts/`
+- [ ] `.github/copilot-instructions.md`
+- [ ] `.cursor/`
+- [ ] `docs/` / `examples/`
+- [ ] Root / repository-wide
 
 ---
 
@@ -40,26 +39,24 @@ Closes #
 
 <!-- All items must be checked before requesting review. -->
 
-- [ ] Follows naming conventions: Verb-Noun functions, PascalCase parameters, camelCase locals
-- [ ] Script includes `#Requires -Version 5.1` (or appropriate version requirement)
-- [ ] `Set-StrictMode -Version Latest` declared at the top of every script/module
-- [ ] State-modifying scripts use `[CmdletBinding(SupportsShouldProcess)]`
-- [ ] Multi-action scripts route via `switch ($PSCmdlet.ParameterSetName)`
-- [ ] All API calls and critical operations wrapped in `try/catch` with `$_.Exception.Message`
-- [ ] Mutated environment state (e.g. `$env:PSModulePath`) restored in `finally` block
-- [ ] No hardcoded secrets — credentials use JSON sidecar files (and are gitignored)
-- [ ] `Write-Progress` used for any operation expected to take > 2 seconds
-- [ ] No large binary output files written under the OneDrive-synced workspace
+- [ ] Folder and file names use lowercase hyphenated format (e.g. `my-skill/SKILL.md`)
+- [ ] `SKILL.md` / `AGENT.md` includes required YAML frontmatter (`name`, `description`)
+- [ ] Each file has a single, clear purpose — large files split into smaller ones
+- [ ] Content is in English and avoids unnecessary jargon
+- [ ] No secrets, tokens, API keys, or credentials included anywhere
+- [ ] New skills are listed in the `README.md` skills table and in `.github/copilot-instructions.md`
+- [ ] New subagents are listed in the `README.md` and in `.github/copilot-instructions.md`
+- [ ] Reference files / scripts placed under the correct `references/` or `scripts/` subfolder
 
 ---
 
 ## Breaking Changes
 
-<!-- Describe any breaking changes, or write "None". -->
+<!-- Describe any breaking changes to existing skill names, frontmatter fields, or prompt interfaces. Write "None" if not applicable. -->
 
 ---
 
 ## Additional Context
 
-<!-- Screenshots, log excerpts, related PRs, or any other context that helps reviewers. -->
+<!-- Screenshots, example Copilot Chat output, related PRs, or any other context that helps reviewers. -->
 
