@@ -29,7 +29,7 @@ For each problem identified in Steps 1–2, assign one category:
 ## Step 4 — Propose changes
 
 For each issue, state:
-- **Skill file:** `c:\Users\viral\OneDrive\Documents\WindowsPowerShell\.github\skills\<skill-name>\SKILL.md`
+- **Skill file:** `<repo-root>/.github/skills/<skill-name>/SKILL.md`
 - **Section to change:** Exact heading or location in the file
 - **Proposed edit:** The exact text/table/rule to add, remove, or replace (show a before/after if modifying existing content)
 - **Why:** One sentence justifying the change based on what happened in this conversation

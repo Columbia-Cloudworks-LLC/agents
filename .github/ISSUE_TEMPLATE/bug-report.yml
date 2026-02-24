@@ -31,9 +31,9 @@ body:
       label: Steps to Reproduce
       description: Minimal steps needed to reproduce the behavior.
       placeholder: |
-        1. Provide a repository to the agent containing several PowerShell scripts.
-        2. Ask the agent to analyze the repository and provide a summary of the scripts.
-        3. Observe that the agent tries to use a non-existent command "Get-ScriptSummary" instead of correctly analyzing the scripts, resulting in an error.
+        1. Open the repository in your IDE with GitHub Copilot / Cursor enabled.
+        2. Invoke the relevant agent skill or subagent (for example, a code-review or log-analyzer skill) on a file that clearly contains issues or TODO comments.
+        3. Observe that the agent reports "no issues found" and does not mention the obvious problems or TODOs, even though the skill description says they should be flagged.
     validations:
       required: true
 
