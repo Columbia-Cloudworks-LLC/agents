@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "hooks": {
+    "afterFileEdit": {
+      "description": "Runs after a file is saved/edited in Cursor. Formats the file, runs quick linting, and stages the change in git.",
+      "command": ".cursor/hooks/after-edit.sh",
+      "args": ["${file}"],
+      "timeout": 30,
+      "continueOnError": true
+    },
+    "stop": {
+      "description": "Runs when a Cursor agent session stops. Summarizes changes made, runs a final lint pass, and creates a git checkpoint commit.",
+      "command": ".cursor/hooks/stop.sh",
+      "args": [],
+      "timeout": 60,
+      "continueOnError": true
+    }
+  }
+}
